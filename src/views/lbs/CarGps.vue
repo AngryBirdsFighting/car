@@ -20,6 +20,24 @@
 					</div>
 				</li>
 			</ul>
+			<ul class="carTypeCount">
+				<li @click="allCheck" :class="{'liActive': liClass == 1}">
+					<p>全部</p>
+					<p>({{allCarNum}})</p>
+				</li>
+				<li @click="onlineCheck" :class="{'liActive': liClass == 2}">
+					<p>在线</p>
+					<p>({{online}})</p>
+				</li>
+				<li @click="offlineCheck" :class="{'liActive': liClass == 3}">
+					<p>离线</p>
+					<p>({{offline}})</p>
+				</li>
+				<li @click="notActiveCheck" :class="{'liActive': liClass == 4}">
+					<p>未激活</p>
+					<p>({{notActive}})</p>
+				</li>
+			</ul>
 			<el-input placeholder="搜索车辆..." class="select-tree-input" style="margin-top:10px" v-model="filterText"></el-input>
 			<div class="tree-list" ref="elTree" v-bind:style="{height: treeHeight}">
 				<el-tree 
@@ -117,17 +135,7 @@
 				</div>
 			</div> 
 			<el-row>
-			  	<el-col :span="16">
-			  		<div class="grid-content bg-purple left-show">
-			  			<ul>
-			  				<li @click="allCheck" :class="{'liActive': liClass == 1}">全部<span>{{allCarNum}}</span></li>
-			  				<li @click="onlineCheck" :class="{'liActive': liClass == 2}">在线<span>{{online}}</span></li>
-			  				<li @click="offlineCheck" :class="{'liActive': liClass == 3}">离线<span>{{offline}}</span></li>
-			  				<li @click="notActiveCheck" :class="{'liActive': liClass == 4}">未激活<span>{{notActive}}</span></li>
-			  			</ul>
-			  		</div>
-			  	</el-col>
-			  	<el-col :span="8">
+			  	<el-col :span="24">
 			  		<div class="grid-content bg-purple-light right-show">
 			  			<ul>
 			  				<li>
@@ -445,7 +453,7 @@
 				allCarArr: [],//所有车辆数组
 				offlineCarArr: [],//离线车辆数组
 				offlineCarArr: [],//离线车辆数组
-				liClass: 4,
+				liClass: 1,
 			}
 		},
 		mounted(){
@@ -456,7 +464,7 @@
 				let windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;//浏览器高度
 				vm.heightData = h + 'px';
 				vm.mapHeight = h - 42 + 'px';
-				vm.treeHeight = h - 120 + 'px';
+				vm.treeHeight = h - 158 + 'px';
 			});
 			//阻止树上的的右击事件
 			vm.$refs.tree2.oncontextmenu = function(){
@@ -1476,7 +1484,7 @@
     	background: #ffffff;
 	}*/
 	.liActive{
-		background: #566fc9 !important;
+		background: $HeaderBackgroundColor !important;
 	    color: #fff !important;
 	}
 	.liNotActive{
@@ -1486,7 +1494,7 @@
 	.home-con{
 		background: none;
 		.tree-box{
-			width: 16%;
+			width: 14%;
 			background: #fff;
 			// @at-root & {
 		    //   	@media all and (max-width: 1400px)  {
@@ -1495,13 +1503,33 @@
 			//       	}
 			//     }
 		    // }
+			.carTypeCount{
+				display: inline-block;
+				width: 100%;
+				background: #f2f2f2;
+				
+				li{
+					display: inline-block;
+					float: left;
+					width: 25%;
+					font-size: $fontSize12;
+					text-align: center;
+					padding: 3px 0;
+					&:hover{
+						@include cursor;
+					}
+					p{
+						@include height(16px);
+					}
+				}
+			}
 		}
 		.tree-list{
 			margin-top: 10px;
 			overflow: auto;
 		}
 		.map-box{
-			width: 83.5%;
+			width: 85.5%;
 			background: #fff;
 			/*overflow: hidden;
 			overflow-x: hidden;
@@ -1753,7 +1781,7 @@
 		}
 	}
 	.gpsInterval1{
-		padding-top:10px;
+		padding-top:5px;
 		color:#85b3e0;
 		border-top:1px solid #F5F5F5;
 		text-align:center;

@@ -56,7 +56,7 @@
             }
         }
         .sidebar-wrapper {
-            width: 211px;
+            width: 0;
             position: fixed;
             top: 60px;
             bottom: 0;
