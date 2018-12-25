@@ -24,15 +24,7 @@
       <el-col :span="4">
         <div class="grid-content bg-purple header-col">
             <ul class="header-right">
-              <li class="fl">
-                <span>
-                  欢迎您，
-                  <span v-if="userInfo.superadmin">超级管理员</span>
-                  <span v-else>普通用户</span>
-                </span>
-              </li>
-
-              <li class="fl user-name">
+              <li class="fr">
                 <el-dropdown class="avatar-container" trigger="click">
                   <div class="avatar-wrapper">
                     <img src="../../assets/img/login-peo.png">
@@ -47,15 +39,14 @@
                     <el-dropdown-item class="change-pass">
                       <span @click="dialogFormVisible = true">修改密码</span>
                     </el-dropdown-item>
-                    <el-dropdown-item>
-                      <span @click="dialogVisible = true">切换主题</span>
+                       <el-dropdown-item class="change-pass">
+                       <span @click="logout">退出</span>
                     </el-dropdown-item>
+                    <!-- <el-dropdown-item>
+                      <span @click="dialogVisible = true">切换主题</span>
+                    </el-dropdown-item> -->
                   </el-dropdown-menu>
                 </el-dropdown>
-              </li>
-              <li class="fl" @click="logout">
-                <img src="../../assets/img/quite.png">
-                <span>退出</span>
               </li>
             </ul>
         </div>
@@ -301,6 +292,7 @@ export default {
     outline: none;
   }
   .logo {
+    margin-left: 20px;
     img {
       width: 40px;
       // height: 30px;
@@ -377,32 +369,26 @@ export default {
     width: 100%;
   }
 }
-.el-menu {
-  height: 60px;
-  line-height: 60px;
-}
 .el-menu--horizontal > .el-submenu .el-submenu__title {
   height: 60px;
   line-height: 60px;
 }
-li.el-menu-item.is-active {
-  background-color: #567086 !important;
-}
 .header-col {
+  padding-right: 34px;
     height: 60px;
     color: white;
 }
 .header-col li{
   line-height: 60px
 }
-.el-menu {
-   background: $HeaderBackgroundColor !important;
-}
-.el-submenu__title{
-   background: $HeaderBackgroundColor !important;
-}
 .header-right{
   font-size: 14px
+}
+.avatar-container{
+  cursor: pointer;
+}
+.el-menu--popup-bottom-start{
+  margin-top: 0;
 }
 </style>
 

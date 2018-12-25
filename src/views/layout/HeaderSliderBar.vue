@@ -4,9 +4,9 @@
       :default-active="activeMenu"
       class="el-menu"
       mode="horizontal"
-      background-color="#545c64"
+      background-color="#03a678"
       text-color="#fff"
-      active-text-color="#ffd04b"
+      active-text-color="#ffcc00"
     >
       <template v-if="permission_routers" v-for="item in permission_routers">
         <!-- <div  class="meun"> -->
