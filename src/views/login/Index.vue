@@ -551,7 +551,7 @@
 		background-size: cover;
 		header {
 			@include height(100px);
-	        background: #566fc9;
+	        background: #03a678;
 	        ul{
 	        	display: inline-block;
 	        	width: 100%;
@@ -654,14 +654,14 @@
 	            .forget-pwd{
 	            	float: right;
 					font-size: $fontSize14;
-					color: #566fc9;
+					color: #03a678;
 				}
 				.el-checkbox__label{
-					color: #566fc9;
+					color: #03a678;
 				}
 				.el-checkbox__input.is-checked .el-checkbox__inner{
-					border-color: #566fc9;
-					background-color: #566fc9;
+					border-color: #03a678;
+					background-color: #03a678;
 				}
 	            .sub-btn button{
 	                @include cursor;
@@ -676,16 +676,16 @@
 				    -o-transition: all .1s;//css3 有些浏览器不支持 Opera
 	                border: none; 
 	                &:hover{
-	                    background-color: #397cd7;
+	                    background-color: #03a678;
 	                }
 	                &:active{
-	                    background-color: #566fc9;
+	                    background-color: #03a678;
 	                }
 	            }
 	            .forget-pass{
 	            	float: right;
 	            	background: none;
-	            	color: #566fc9;
+	            	color: #03a678;
 	            	border: none;
 	            }
 	        }
@@ -759,5 +759,8 @@
     			}
     		}
 		}
+	}
+	.login-container .login-form .login-box .sub-btn button{
+		background: #03a678 !important
 	}
 </style>
