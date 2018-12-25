@@ -296,8 +296,6 @@ export default {
     img {
       width: 70%; 
       line-height: 60px;
-
-      // height: 30px;
       margin-left: 10px;
       margin-top: 15px;
     }
