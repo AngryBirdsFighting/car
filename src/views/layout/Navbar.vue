@@ -327,7 +327,6 @@ export default {
     position: relative !important;
     z-index: 2000;
     width: 300px;
-    // display: inline-block;
     font-size: 14px;
     color: #d2d9f4;
     outline: none;
@@ -373,6 +372,9 @@ export default {
   height: 60px;
   line-height: 60px;
 }
+.el-submenu__title i {
+    color: #fff;
+}
 .header-col {
   padding-right: 34px;
     height: 60px;
@@ -387,9 +389,9 @@ export default {
 .avatar-container{
   cursor: pointer;
 }
-.el-menu--popup-bottom-start{
-  margin-top: 0;
-}
+// .el-menu--popup-bottom-start{
+//   margin-top: 0;
+// }
 </style>
 
 
