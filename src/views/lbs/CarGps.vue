@@ -76,8 +76,8 @@
 						<el-button class="tabBtn tabSmall" v-show="!tableFlag" @click.native.prevent="changeIcon('down')" title="收回"></el-button>
 					</li>
 				</ul>
-				<div v-if="tabActiveFlag && !tableFlag" v-bind:style="{height: mapHeight}"> 
-					<el-table key="multipleTable" ref="multipleTable" :data="GPSdata" height="155" style="width: 100%"
+				<div v-if="tabActiveFlag && !tableFlag" v-bind:style="{height: tableBoxHeight}"> 
+					<el-table key="multipleTable" ref="multipleTable" :data="GPSdata" v-bind:style="{height: tableHeight}" style="width: 100%"
 						v-loading="tableLoadGps" element-loading-text="拼命加载中">
 					    <el-table-column align="center" prop="carNum" label='车牌号'></el-table-column>
 					    <el-table-column align="center" prop="gpsTime" label="定位时间"></el-table-column>
@@ -103,8 +103,8 @@
 					    <el-table-column align="center" prop="description" label="其他"></el-table-column>
 				  	</el-table>
 				</div>
-				<div v-if="!tabActiveFlag && !tableFlag" style="height:158px">
-					<el-table key="directiveTable" ref="directiveTable" :data="directivedata" height="155" style="width: 100%"
+				<div v-if="!tabActiveFlag && !tableFlag" v-bind:style="{height: tableBoxHeight}">
+					<el-table key="directiveTable" ref="directiveTable" :data="directivedata" v-bind:style="{height: tableHeight}" style="width: 100%"
 							v-loading="tableLoadOrder" element-loading-text="拼命加载中">
 					    <el-table-column align="center" prop="carNum" label='车牌号'></el-table-column>
 					    <el-table-column align="center"  label="执行状态">
@@ -134,7 +134,7 @@
 				  	</el-table>
 				</div>
 			</div> 
-			<el-row>
+			 <el-row v-show="tableFlag">
 			  	<el-col :span="24">
 			  		<div class="grid-content bg-purple-light right-show">
 			  			<ul>
@@ -367,6 +367,8 @@
 				heightData: '500px',
 				mapHeight: '450px',
 				treeHeight: '500px',
+				tableHeight: '500px',
+				tableBoxHeight: '500px',
 				map: null,
 				carId:"",//选择的车辆ID
 				carNum:"",//选择的车辆编号
@@ -465,6 +467,8 @@
 				vm.heightData = h + 'px';
 				vm.mapHeight = h - 42 + 'px';
 				vm.treeHeight = h - 158 + 'px';
+				vm.tableHeight = h - 70 + 'px';
+				vm.tableBoxHeight = h - 40 + 'px';
 			});
 			//阻止树上的的右击事件
 			vm.$refs.tree2.oncontextmenu = function(){
