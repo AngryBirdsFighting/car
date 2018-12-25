@@ -1,0 +1,65 @@
+{
+    "data": [{
+				"deptId": 1,
+				"deptPid": -1,
+				"deptName": "西安一体物联",
+				"children": [{
+					"deptId": 4,
+					"deptName": "一体数科",
+					"deptPid": 1,
+					"children": [{
+						"type" :1,
+						"deptId": 9,
+						"deptPid": 4,
+						"status":0,
+						"deptName": "测试部门"
+					}, {
+						"type" :1,
+						"deptId": 10,
+						"deptPid": 4,
+						"status":1,
+						"deptName": "前端开发"
+					}, {
+						"deptId": 11,
+						"deptPid": 4,
+						"status":1,
+						"deptName": "后端开发"
+					}, {
+						"deptId": 12,
+						"deptPid": 4,
+						"status":1,
+						"deptName": "UI/UE"
+					}]
+				}]
+			}, {
+					"deptId": 2,
+					"deptName": "一体物联",
+					"deptPid": 1,
+					"children": [{
+						"deptId": 20,
+						"deptPid": 2,
+						"status":0,
+						"deptName": "测试部门"
+					}, {
+						"deptId": 30,
+						"deptPid": 2,
+						"status":1,
+						"deptName": "前端开发"
+					}, {
+						"deptId": 41,
+						"deptPid": 2,
+						"status":1,
+						"deptName": "后端开发"
+					}, {
+						"deptId": 42,
+						"deptPid": 2,
+						"status":1,
+						"deptName": "UI/UE"
+					}, {
+						"deptId": 52,
+						"deptPid": 2,
+						"status":1,
+						"deptName": "财务部门"
+					}]
+			}]
+}
