@@ -72,11 +72,11 @@
 						<el-button  v-show="!tabActiveFlag" @click.native.prevent = "refreshGps" type="primary" style="margin-top:5px">查询</el-button>
 					</li>
 					<li class="fr">
-						<el-button v-show="tableFlag" @click.native.prevent = "changeIcon('up')" icon="el-icon-arrow-up" title="展开"></el-button>
-						<el-button v-show="!tableFlag" @click.native.prevent = "changeIcon('down')" icon="el-icon-arrow-down" title="收回"></el-button>
+						<el-button class="tabBtn tabBig" v-show="tableFlag" @click.native.prevent="changeIcon('up')"  title="展开"></el-button>
+						<el-button class="tabBtn tabSmall" v-show="!tableFlag" @click.native.prevent="changeIcon('down')" title="收回"></el-button>
 					</li>
 				</ul>
-				<div v-if="tabActiveFlag && !tableFlag" style="height:158px"> 
+				<div v-if="tabActiveFlag && !tableFlag" v-bind:style="{height: mapHeight}"> 
 					<el-table key="multipleTable" ref="multipleTable" :data="GPSdata" height="155" style="width: 100%"
 						v-loading="tableLoadGps" element-loading-text="拼命加载中">
 					    <el-table-column align="center" prop="carNum" label='车牌号'></el-table-column>
@@ -1757,7 +1757,6 @@
 		width: 100%;
 		min-height: 40px;
 		background-color:#fff;
-		/*//tbody .cell{font-size: 12px;}*/
 		ul{
 			display: block;
 			width: 100%;
@@ -1775,7 +1774,7 @@
 		li.fr{
 			padding-right: 20px;
 			button{
-				padding: 5px;
+				padding: 13px;
 				margin-top: 6px;
 			}
 		}
@@ -1792,5 +1791,13 @@
 		.el-tabs__content{
 			height: 460px !important;
 		}
+	}
+	.tabBig{
+		background: url(../../assets/img/tabBig.png) no-repeat;
+		border: none;
+	}
+	.tabSmall{
+		background: url(../../assets/img/tabSmall.png) no-repeat;
+		border: none;
 	}
 </style>

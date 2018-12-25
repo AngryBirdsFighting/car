@@ -115,23 +115,28 @@ export default {
 	}
 	
 	.menu1-iocn {
-		background-image: url(../../assets/img/menu1-iocn.png);
+    background-image: url(../../assets/img/menu1-iocn.png);
+    background-size: contain;
 	}
 	
 	.menu2-iocn {
-		background-image: url(../../assets/img/menu2-iocn.png);
+    background-image: url(../../assets/img/menu2-iocn.png);
+    background-size: contain;
 	}
 	
 	.menu3-iocn {
-		background-image: url(../../assets/img/menu3-iocn.png);
+    background-image: url(../../assets/img/menu3-iocn.png);
+    background-size: contain;
 	}
 	
 	.menu4-iocn {
-		background-image: url(../../assets/img/menu4-iocn.png);
+    background-image: url(../../assets/img/menu4-iocn.png);
+    background-size: contain;
 	}
 	
 	.menu5-iocn {
-		background-image: url(../../assets/img/menu5-iocn.png);
+    background-image: url(../../assets/img/menu5-iocn.png);
+    background-size: contain;
 	}
 	
 	.show_hide_menu {
