@@ -11,7 +11,7 @@
           <div class="logo">
             <img v-if="userInfo.entLogo" :src="userInfo.entLogo" class="avatar">
           <img v-else src="../../assets/img/logo.png">
-          <span>车联网业务平台</span>
+          <!-- <span>车联网业务平台</span> -->
           </div>
           
         </div>
@@ -294,11 +294,10 @@ export default {
   .logo {
     margin-left: 20px;
     img {
-      width: 40px;
-      // height: 30px;
-      margin-right: 10px;
-      float: left;
-      margin-top: 10px;
+      width: 70%; 
+      line-height: 60px;
+      margin-left: 10px;
+      margin-top: 15px;
     }
     span {
       color: #fff;
