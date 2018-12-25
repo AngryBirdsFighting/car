@@ -9,7 +9,7 @@
 			<ul>
 				<li class="fl">
 					<img src="../../assets/img/logo.png"/>
-					<span>车联网业务平台</span>
+					<!-- <span>车联网业务平台</span> -->
 				</li>
 				<li class="fr" v-if="androidUrl || iosUrl">
 					<span>APP下载:</span>
@@ -577,9 +577,10 @@
 	        		margin-left: 20px;
 	        	}
 	        	img{
-		        	height: 60px;
+					width: 100%;
+		        	// height: 60px;
 		        	float: left;
-		        	margin-top: 20px;
+		        	margin-top: 30px;
 		        }
 	        }
 	        li.fr {
