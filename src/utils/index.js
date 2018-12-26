@@ -164,13 +164,14 @@ export  const utils = {
     getTableHeight: function(callback) {
         //延时1MS，直接设置高度没有作用
         let t1 = window.setTimeout(()=>{
-            let h = $('.sidebar-wrapper').height();  //左侧路由高度
+            debugger
+            let h = $(window).height();  //左侧路由高度
             let	h1 = $('.filter-container').height();  //搜索栏
             let h2 = $('.pagination-container').height(); //页码
             if (h2) {
-            	callback(h - h1 - h2 - 102);  //92主要是所以margin之和
+            	callback(h - h1 - h2 - 122);  //92主要是所以margin之和
             } else {
-            	callback(h - h1 - 102);  //92主要是所以margin之和
+            	callback(h - h1 - 122);  //92主要是所以margin之和
             }
             window.clearTimeout(t1); //去掉定时器 
         }, 1);
